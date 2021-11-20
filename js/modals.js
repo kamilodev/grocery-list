@@ -1,4 +1,4 @@
-// SELECTORS
+// BUTTON SELECTORS
 
 let add = document.querySelector('.shoppinglist-add')
 let empty = document.querySelector('.shoppinglist-clear')
@@ -12,7 +12,7 @@ let cancelEmpty = document.querySelectorAll('.btn-cancel')[1]
 let closeDelete = document.querySelectorAll('.btn-label')[2]
 let cancelDelete = document.querySelectorAll('.btn-cancel')[2]
 
-// LISTENERS
+// BUTTON LISTENERS
 
 add.addEventListener('click', e => addOverview(e))
 
@@ -30,7 +30,7 @@ closeDelete.addEventListener('click', e => closeOverview(e))
 
 cancelDelete.addEventListener('click', e => closeOverview(e))
 
-// FUNCTIONS
+// MODAL FUNCTIONS
 
 function addOverview() {
 	div.classList.add('has-overlay')
