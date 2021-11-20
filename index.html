@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web Programming - Cat 02 / Shopping List</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600;900&display=swap" rel="stylesheet">
+
+        <link href="css/styles.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/46c24357ea.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body id="overview">
+        <article class="shoppinglist">
+            <header class="shoppinglist-header">
+                <h1>Shopping List</h1>
+                <div class="shoppinglist-actions">
+                    <a class="shoppinglist-add btn-link js-add-item" href="#">+ Add item</a>
+                    <a class="shoppinglist-clear btn-link js-empty-list" href="#">Empty list</a>
+                </div>
+            </header>
+
+            <div class="searchbox">
+                <input id="mySearch" class="field field-search js-search" onkeyup="liveSearch()" type="text" placeholder="Apple, banana...">
+                <svg class="field-search-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+            </div>
+
+            <ol class="item-list">
+                <li class="item-header">
+                    <span class="item-name">Name</span>
+                    <span class="item-amount">Amount</span>
+                    <span class="item-price">Price</span>
+                    <span class="item-delete">&nbsp;</span>
+                </li>
+            </ol>
+            <div class="total">
+                Total <span class="total-price">€</span>
+            </div>
+        <article>
+
+        <section class="modal modal-medium js-modal-add d-none">
+            <header class="modal-header">
+                <h2 class="modal-title">Add Item</h2>
+                <a href="#" class="btn btn-link">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                    <span class="btn-label">Close</span>
+                </a>
+            </header>
+            <p class="modal-intro">Add an item to the shopping cart, all fields are required.</p>
+            <form action="" class="add-form">
+                <div class="field-group field-name">
+                    <label class="label" for="">Item name</label>
+                    <input class="field" class="js-add-name" type="text" name="item-name" id="add-item-name">
+                    <span class="field-feedback js-name-feedback d-none">Name is a required field.</span>
+                </div>
+                <div class="field-group field-amount">
+                    <label class="label" for="">Amount</label>
+                    <input class="field" class="js-add-amount" type="text" name="item-amount" id="add-item-amount">
+                    <span class="field-feedback js-amount-feedback d-none">Amount is a numeric required.</span>
+                </div>
+                <div class="field-group field-price">
+                    <label class="label" for="">Price</label>
+                    <input class="field" class="js-add-price" type="text" name="item-price" id="add-item-price">
+                    <span class="field-feedback js-price-feedback d-none">Price is a numeric required field.</span>
+                </div>
+            </form>
+            <footer class="modal-actions">
+               <span class="field-feedback-name js-name-error d-none">The name item must be unique, please enter other name</span>
+                <a href="#" class="btn btn-cancel">Cancel</a>
+                <a href="#" class="btn btn-add">Add item</a>
+            </footer>
+        </section>
+
+        <section class="modal modal-small js-modal-empty d-none">
+            <header class="modal-header">
+                <h2 class="modal-title">Empty List</h2>
+                <a href="#" class="btn btn-link">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                    <span class="btn-label">Close</span>
+                </a>
+            </header>
+            <p class="modal-intro">This action totally empty the shopping list. Type EMPTY to confirm.</p>
+            <div class="field-group">
+                <input id="empty-mylist" class="field" type="text" value="" placeholder="Type EMPTY and press confirm.">
+                <span class="field-feedback js-clear-feedback d-none">You should type EMPTY in uppercase to confirm.</span>
+            </div>
+            <footer class="modal-actions">
+                <a href="#" class="btn btn-cancel">Cancel</a>
+                <a href="#" class="btn btn-empty">Confirm</a>
+            </footer>
+        </section>
+
+        <section class="modal modal-delete js-modal-empty d-none">
+            <header class="modal-header">
+                <h2 class="modal-title">Delete Item</h2>
+                <a href="#" class="btn btn-link">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                    <span class="btn-label">Close</span>
+                </a>
+            </header>
+            <p class="modal-intro">This action deletes the current item permanently. Type DELETE to confirm.</p>
+            <div class="field-group">
+                <input id="delete-mylist" class="field" type="text" value="" placeholder="Type DELETE and press confirm.">
+                <span class="field-feedback js-delete-feedback d-none">You should type DELETE in uppercase to confirm.</span>
+            </div>
+            <footer class="modal-actions">
+                <a href="#" class="btn btn-cancel">Cancel</a>
+                <a href="#" class="btn btn-delete">Confirm</a>
+            </footer>
+        </section>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script src="./js/helpers.js"></script>
+      <script src="./js/selectors.js"></script>
+      <script src="./js/app.js"></script>
+    </body>
+</html>

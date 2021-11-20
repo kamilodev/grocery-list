@@ -1,0 +1,364 @@
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+
+	font-family: Inter, 'sans-serif';
+	color: hsl(0, 0%, 24%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5. h6 {
+	color: hsl(0, 0%, 16%);
+}
+
+body.has-overlay:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+/*
+* Utilities
+*/
+.d-none {
+	display: none;
+}
+
+.d-none-elem {
+	display: none !important;
+}
+
+/*
+* Shopping list styles
+*/
+.shoppinglist {
+	width: 90%;
+	max-width: 640px;
+	margin: 48px auto;
+}
+
+.shoppinglist-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 0 24px;
+}
+
+.shoppinglist-title {
+}
+
+.shoppinglist-actions {
+	margin: 0 0 0 auto;
+}
+
+.shoppinglist-add {
+}
+
+.shoppinglist-clear {
+	margin-left: 24px;
+}
+
+/*
+* Item list styles
+*/
+.item-list {
+	padding: 0;
+	margin: 16px 0 0;
+
+	list-style: none;
+}
+
+.elem-list,
+.item-header {
+	display: flex;
+	align-items: center;
+
+	padding: 16px 24px;
+}
+
+.elem-list {
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.item-name {
+	min-width: 60%;
+}
+
+.item-amount {
+	min-width: 16%;
+	text-align: center;
+}
+
+.item-price {
+	min-width: 16%;
+	text-align: right;
+}
+
+.item-delete {
+	min-width: 8%;
+
+	line-height: 12px;
+	text-align: right;
+	color: hsl(0, 80%, 64%);
+}
+
+.ico-delete {
+	width: 20px;
+	height: 20px;
+}
+
+.item-header .item-name,
+.item-header .item-amount,
+.item-header .item-price {
+	font-weight: 600;
+	color: hsl(0, 0%, 64%);
+}
+
+.total {
+	padding: 0 24px;
+	margin-top: 24px;
+
+	text-align: right;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.total-price {
+	display: inline-block;
+	margin-left: 24px;
+}
+
+/*
+* Add item modal styles
+*/
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	transform: translateX(-50%) translateY(-50%);
+
+	padding: 48px 64px;
+	width: 80%;
+	border-radius: 12px;
+
+	background-color: #fff;
+	box-shadow: 0px 2px 32px -8px hsla(0, 0%, 0%, 0.08);
+}
+
+.modal-medium {
+	max-width: 800px;
+}
+
+.modal-small {
+	max-width: 520px;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-title {
+	margin: 0;
+
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.modal-intro {
+}
+
+.modal-actions {
+	display: flex;
+	justify-content: flex-end;
+
+	margin-top: 32px;
+}
+
+.modal-close {
+}
+
+/*
+* Forms and buttons styles
+*/
+.add-form {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.field-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	font-weight: 600;
+	color: hsl(0, 0%, 40%);
+}
+
+.label + .field {
+	margin-top: 4px;
+}
+
+.field {
+	padding: 12px 16px;
+
+	font-size: 18px;
+	color: hsl(0, 0%, 24%);
+}
+
+.field::placeholder {
+	font-weight: 100;
+	color: hsl(0, 0%, 72%);
+}
+
+.field-name {
+	width: 60%;
+	min-width: 240px;
+	max-width: 420px;
+}
+
+.field-amount {
+	width: 12%;
+	min-width: 72px;
+}
+
+.field-price {
+	width: 20%;
+	min-width: 96px;
+	max-width: 120px;
+}
+
+.field-feedback {
+	padding: 8px 0;
+
+	font-size: 12px;
+	color: hsl(0, 80%, 64%);
+}
+
+.field-feedback-name {
+	padding: 8px 0;
+	text-align: left;
+	font-size: 14px;
+	color: hsl(261, 85%, 30%);
+	margin-right: 8em;
+}
+
+.searchbox {
+	position: relative;
+
+	padding: 0 24px;
+}
+
+.field-search {
+	width: 100%;
+	max-width: 100%;
+	padding-left: 48px;
+}
+
+.field-search-icon {
+	position: absolute;
+	top: 50%;
+	left: 40px;
+	transform: translateY(-50%);
+
+	width: 24px;
+	height: 24px;
+
+	color: hsl(0, 0%, 64%);
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	padding: 8px 16px;
+
+	text-decoration: none;
+	font-weight: 600;
+
+	border-radius: 4px;
+}
+
+.btn-link,
+.btn-link:active,
+.btn-link:visited {
+	color: hsl(204, 80%, 64%);
+}
+
+.btn-link:hover {
+	color: hsl(204, 80%, 40%);
+}
+
+.btn-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.btn-label {
+}
+
+.btn-icon + .btn-label {
+	margin-left: 4px;
+}
+
+.btn-close {
+	color: hsl(0, 0%, 16%);
+}
+
+.btn-cancel,
+.btn-close {
+	color: hsl(0, 0%, 40%);
+}
+
+.btn-cancel:hover,
+.btn-close:hover {
+	color: hsl(0, 0%, 16%);
+}
+
+.btn-add {
+	font-weight: 300;
+	color: white;
+
+	background-color: hsl(134, 48%, 56%);
+}
+
+.btn-add:hover {
+	background-color: hsl(134, 48%, 40%);
+}
+
+.btn-empty {
+	font-weight: 300;
+	color: black;
+	border: 1px solid black;
+	border-radius: 4px;
+
+	background-color: hsl(58, 100%, 51%);
+}
+
+.btn-empty:hover {
+	border: 2px solid black;
+	border-radius: 4px;
+	background-color: hsl(58, 91%, 50%);
+}
+
+.btn-cancel + .btn-add + .btn-empty {
+	margin-left: 24px;
+}
