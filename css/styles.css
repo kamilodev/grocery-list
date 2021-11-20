@@ -15,7 +15,8 @@ h1,
 h2,
 h3,
 h4,
-h5. h6 {
+h5,
+h6 {
 	color: hsl(0, 0%, 16%);
 }
 
@@ -58,14 +59,8 @@ body.has-overlay:after {
 	padding: 0 24px;
 }
 
-.shoppinglist-title {
-}
-
 .shoppinglist-actions {
 	margin: 0 0 0 auto;
-}
-
-.shoppinglist-add {
 }
 
 .shoppinglist-clear {
@@ -181,17 +176,11 @@ body.has-overlay:after {
 	font-weight: 600;
 }
 
-.modal-intro {
-}
-
 .modal-actions {
 	display: flex;
 	justify-content: flex-end;
 
 	margin-top: 32px;
-}
-
-.modal-close {
 }
 
 /*
@@ -310,9 +299,6 @@ body.has-overlay:after {
 .btn-icon {
 	width: 24px;
 	height: 24px;
-}
-
-.btn-label {
 }
 
 .btn-icon + .btn-label {
