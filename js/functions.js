@@ -1,7 +1,6 @@
 // ADD NEW ITEM
 
 function addItem(e) {
-	console.log('Click');
 	let id = Math.floor(Math.random() * 1000000);
 	const itemList = new Item(id, inputName.value, inputAmount.value, inputPrice.value);
 	validateItems();
