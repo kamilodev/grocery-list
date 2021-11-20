@@ -362,3 +362,24 @@ body.has-overlay:after {
 .btn-cancel + .btn-add + .btn-empty {
 	margin-left: 24px;
 }
+
+footer {
+	background-color: #000;
+	color: #fff;
+	font-size: 14px;
+	bottom: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	text-align: center;
+}
+
+footer i {
+	color: red;
+}
+
+footer a {
+	color: #3c97bf;
+	text-decoration: none;
+}
