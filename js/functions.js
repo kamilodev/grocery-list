@@ -130,21 +130,23 @@ function showPrice() {
 function liveSearch(e) {
 	const getItems = JSON.parse(localStorage.getItem('items'))
 
-	getItems.forEach(function (item) {
-		const elemId = document.getElementById(item.id)
-		if (inputSearch.value.length >= 3) {
-			if (item.name.toLowerCase().includes(inputSearch.value.toLowerCase())) {
+	if (localStorage.getItem('items')) {
+		getItems.forEach(function (item) {
+			const elemId = document.getElementById(item.id)
+			if (inputSearch.value.length >= 3) {
+				if (item.name.toLowerCase().includes(inputSearch.value.toLowerCase())) {
+					elemId.parentElement.parentElement.classList.add('elem-list')
+					elemId.parentElement.parentElement.classList.remove('d-none-elem')
+				} else {
+					elemId.parentElement.parentElement.classList.remove('elem-list')
+					elemId.parentElement.parentElement.classList.add('d-none-elem')
+				}
+			} else {
 				elemId.parentElement.parentElement.classList.add('elem-list')
 				elemId.parentElement.parentElement.classList.remove('d-none-elem')
-			} else {
-				elemId.parentElement.parentElement.classList.remove('elem-list')
-				elemId.parentElement.parentElement.classList.add('d-none-elem')
 			}
-		} else {
-			elemId.parentElement.parentElement.classList.add('elem-list')
-			elemId.parentElement.parentElement.classList.remove('d-none-elem')
-		}
-	})
+		})
+	}
 }
 
 // MODAL CONTROLLER
