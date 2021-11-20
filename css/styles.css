@@ -333,23 +333,21 @@ body.has-overlay:after {
 .btn-empty {
 	font-weight: 300;
 	color: black;
-	border: 1px solid black;
 	border-radius: 4px;
-
-	background-color: hsl(58, 100%, 51%);
+	color: white;
+	background-color: hsl(33, 95%, 57%);
 }
 
 .btn-empty:hover {
-	border: 2px solid black;
 	border-radius: 4px;
-	background-color: hsl(58, 91%, 50%);
+	background-color: hsl(33, 92%, 53%);
 }
 
 .btn-cancel + .btn-add + .btn-empty {
 	margin-left: 24px;
 }
 
-footer {
+footer.band {
 	background-color: #000;
 	color: #fff;
 	font-size: 14px;
